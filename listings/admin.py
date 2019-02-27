@@ -4,9 +4,10 @@ from django.contrib import admin
 from .models import Listing
 # Register your models here.
 # Now register the Listing app to the admin site
-
+#
 class ListingAdminTable(admin.ModelAdmin):
     # Now define the property about how they should displayed
+    # do the customization here
     list_display = ('id','title','is_published','price','list_date','realtors')
     list_display_links = ('id','title')
     list_filter = ('realtors',)
@@ -16,4 +17,5 @@ class ListingAdminTable(admin.ModelAdmin):
     list_per_page = 25
 
 
-admin.site.register(Listing,ListingAdminTable)
+admin.site.register(Listing,ListingAdminTable) # first parameter is the
+# name of the model Listing, and second parameter is the name of the class

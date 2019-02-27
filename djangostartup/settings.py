@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,29 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+
+# Messages
+#To change the default tags for a message level (either built-in or
+# custom), set the MESSAGE_TAGS setting to a dictionary containing the
+# levels you wish to change. As this extends the default tags,
+# you only need to provide tags for the levels you wish to override:
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    #
+    messages.ERROR: 'danger', # for the use of bootstrap alert-danger class we override the ERROR Level Constant to this 'danger' tag here
+    messages.SUCCESS: 'success',
+}
+
+
+# Email COnfig
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'bappi.ajmalaamir@gmail.com'
+SERVER_EMAIL = 'bappi.ajmalaamir@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bappi.ajmalaamir@gmail.com'
+EMAIL_HOST_PASSWORD = 'lifeisfunny'
+EMAIL_USE_TLS=True # it will show us if there is something error

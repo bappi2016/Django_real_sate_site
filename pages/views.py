@@ -4,6 +4,7 @@ from listings.models import Listing
 # for the about page where we will showed our realtor, we need to fetch date from the realtors model,
 # that's why we need to import it
 from realtors.models import Realtor
+from listings.choices import price_choices,bedroom_choices,state_choices
 
 # Create your views here.
 # Here we want to render a template for out home page ..
@@ -16,7 +17,10 @@ def index(request): # Here the index function will inherit the request method as
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)[:3]
 
     context = {
-        'listings': listings
+        'listings': listings,
+        'state_choices':state_choices,
+        'bedroom_choices':bedroom_choices,
+        'price_choices':price_choices
     }
     return render(request,'pages/index.html',context)
 

@@ -16,5 +16,5 @@ path('', views.index, name='listings'),# view will call the index function for t
     # and the method will call the index , and in third parameter we set a name for our
     # route to easily access the path, Ok now lets create the index function in the views page
 path('<int:listing_id>', views.listing, name='listing'), # For viewing the single listing or listing/id
-path('search', views.search, name='search') # here name belongs to html page name the file we wanna render
+path('search', views.search, name='search'), # here name belongs to html page name the file we wanna render
 ]
