@@ -11,7 +11,7 @@ contents from you or your client's requirements. To know how to setup, follow th
 
 
 - [Technology Used](#technology-used)
-- [Cyrrent Features](#features)
+- [Current Features](#current-features)
 - [Setup in local machine](#setup-in-local-machine)
 - [Setup PostgreSQL in local machine](#setup-postgresql-in-local-machine)
 - [How to use admin panel to manage contents](#how-to-use-admin-panel-to-manage-contents)
@@ -22,6 +22,17 @@ contents from you or your client's requirements. To know how to setup, follow th
 2. [PostgreSQL](https://www.postgresql.org)
 3. [Bootstrap](https://getbootstrap.com/)
 
+## Resources/Requirements Need for this project
+
+autopep8==1.4.3
+Django==2.1.5
+Pillow==5.4.1
+pkg-resources==0.0.0
+psycopg2==2.7.7
+psycopg2-binary==2.7.7
+pycodestyle==2.5.0
+pytz==2018.9
+
 
 ## Current Features
 1. Responsive single page webapp
@@ -31,30 +42,54 @@ contents from you or your client's requirements. To know how to setup, follow th
 5. User Registration
 6. User Dashboard
 
-## Setup python and virtual environment in local machine
 
-```
-sudo apt-get install python3
-sudo pip install virtualenv
-virtualenv --python=python3 venv
-source venv/bin/activate
-``` 
 
-Ok now your machine is ready to rock. Now you can work with this project.
-Let assume our project name will be django_startup
 
-1. First clone this project or fork and clone your fork url
+##Setup In Local Machine
+
+First step- Create a directory or folder for the project where you want to copy this in your local machine.
+You can use any existing folder or directory if you want.
+
+
+Open the directory or the project folder in an editor and then open the CLI of the editor .
+In the CLI make sure you are in your exact path of the folder or directory 
+Clone this project or fork and clone your fork url and paste it in the CLI and hit enter
+
 ```
 git clone https://github.com/bappi2016/Django_real_state.git
-cd django_startup # Or Enter the project dir here my dir name is django_startup
-```
 
-2. Now run and install django 
+```
+Then go to the project root directory, here the name is django_startup
+
+```
+cd django_startup 
+```
+Here the django_startup is our project root directory 
+
+Second Step- Create a virtual environment in your current directory for this project and activate it
+Make sure you are in the project root directory that is django_startup
+
+```
+python -m venv ./venv
+``` 
+. is used for referring the current directory.
+Here ./venv will create a virtual environment is this current project directory what exactly we want
+Check there is a folder or directory created inside the django_startup project directory
+Now activate the virtual environment.
+
+```
+source venv/bin/activate
+```
+If virtual environment successfully activated it will show something like the following line in you CLI
+(venv) bappi@bappi-pc:~/DJANGO_FOLDER/django_startup$ 
+
+
+Now run and install django 
 
 ```
 pip install django 
 ``` 
-3. Check the version of django 
+Check the version of django 
 
 ```
 python -m django –version
@@ -96,7 +131,7 @@ python3 manage.py runserver
 ```
 
 9. Visit http://127.0.0.1:8000/ in a web browser to see the following webpage.
-![github_readme_screenshots](Home_page.png)
+
 <p align="center">
     <img src="github_readme_screenshots/Home_page.png" width="800" alt="home page" />
 </p>
@@ -122,7 +157,7 @@ AUTHENTICATION AND AUTHORIZATION,
 CONTACTS
 LISTINGS
 REALTORS
-![github_readme_screenshots](Admin_panel.png)
+
 
 <p align="center">
     <img src="github_readme_screenshots/Admin_panel.png" width="800" alt="admin panel" />
@@ -133,7 +168,7 @@ REALTORS
 5. Now to add a contacts. Click the [+ Add] button
 
 You will see the following form
-![github_readme_screenshots](contacts.png)
+
 <p align="center">
     <img src="github_readme_screenshots/contacts.png" width="800" alt="add contacts table" />
 </p>	

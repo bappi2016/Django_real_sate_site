@@ -2,7 +2,9 @@ from django.shortcuts import get_object_or_404,render
 from .models import Listing
 from .choices import price_choices,bedroom_choices,state_choices
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-# Create your views here.
+# Create your views here. We use django function based views
+# FBVs allows us to simply write python function to handle how we want to
+# display data to the user
 
 def index(request):
     # Here the listings variable store all the databases of Listing model and viewed with there list date and filter with published or not
@@ -26,7 +28,7 @@ def listing(request,listing_id):
     }
     return render(request , 'listings/listing.html',context) # request the browser to go to listings packages and render the html file
 
-def search(request):
+def search(request): # For searching listings or properties
     # Now for search option at first we have to fetch all the models of listing and then filter with the users requerments
     # Now set a query set list with the listing model and add filter for the search
     query_set_list = Listing.objects.order_by('-list_date')
