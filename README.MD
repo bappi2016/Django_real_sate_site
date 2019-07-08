@@ -45,7 +45,7 @@ pytz==2018.9
 
 
 
-##Setup In Local Machine
+## Setup In Local Machine
 
 First step- Create a directory or folder for the project where you want to copy this in your local machine.
 You can use any existing folder or directory if you want.
@@ -70,7 +70,9 @@ Second Step- Create a virtual environment in your current directory for this pro
 Make sure you are in the project root directory that is django_startup
 
 ```
-python -m venv ./venv
+pip3 install --upgrade pip
+sudo pip3 install virtualenv 
+python3 -m venv ./venv
 ``` 
 . is used for referring the current directory.
 Here ./venv will create a virtual environment is this current project directory what exactly we want

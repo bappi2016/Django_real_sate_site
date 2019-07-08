@@ -3,6 +3,10 @@ from django.urls import path
 
 from . import views
 
+# we can also import all our views function below ways
+#from listings.views import index,listing,search
+
+
 # for listing we gonna have to have some urls that we need to connect,
 # so that's  we need the urls.py file here and change accordingly
 

@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # FBVs allows us to simply write python function to handle how we want to
 # display data to the user
 
-def index(request):
+def index(request): # request arg is by default , we have to pass it always when we want any request
     # Here the listings variable store all the databases of Listing model and viewed with there list date and filter with published or not
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
     #Now create a paginator for the listing page
@@ -14,7 +14,7 @@ def index(request):
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
     # Now create a dictionary named context which we will pass to fetch the data in the front end
-    context = {
+    context = { # for mapping model attribute
         'listings': paged_listings
 
     }
